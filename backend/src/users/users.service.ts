@@ -1,9 +1,6 @@
 import { Injectable, NotFoundException, UseGuards } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { InjectRepository } from '@nestjs/typeorm';
-import { User } from './entities/user.entity';
-import { Repository } from 'typeorm';
 import { UsersRepository } from './user.repository';
 
 export abstract class UsersService {
