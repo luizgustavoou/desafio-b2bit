@@ -30,7 +30,8 @@ export class AuthService {
 
     if (password !== pass) throw new UnauthorizedException('Senha incorreta');
 
-    const { accessToken, refreshToken } = await this.getTokens(userProfile);
+    const { accessToken, refreshToken } =
+      await this.genareteTokens(userProfile);
 
     this.sessionsService.create({
       accessToken: accessToken,
@@ -42,9 +43,7 @@ export class AuthService {
   }
 
   async signUp(signUpDto: SignUpDto) {
-    const result = await this.usersService.findOneByEmail(
-      signUpDto.email,
-    );
+    const result = await this.usersService.findOneByEmail(signUpDto.email);
 
     if (result) throw new ConflictException('E-mail já utilizado.');
 
@@ -63,7 +62,8 @@ export class AuthService {
 
     const { password, sessions, ...userProfile } = session.user;
 
-    const { accessToken, refreshToken } = await this.getTokens(userProfile);
+    const { accessToken, refreshToken } =
+      await this.genareteTokens(userProfile);
 
     await this.sessionsService.update(session.id, {
       accessToken,
@@ -84,7 +84,7 @@ export class AuthService {
     return user;
   }
 
-  private async getTokens(user: UserProfile) {
+  private async genareteTokens(user: UserProfile) {
     const payload = {
       sub: user.id,
       email: user.email,
