@@ -1,15 +1,17 @@
 import { IAuthApi, ILoginResponse, IProfileResponse } from "@/apis/auth.api";
+import { ILoginParams } from "@/types/ILoginParams";
 
 export interface IAuthService {
-  login(email: string, password: string): Promise<ILoginResponse>;
+  login(params: ILoginParams): Promise<ILoginResponse>;
   getProfile(): Promise<IProfileResponse>;
+  
 }
 
 export class AuthServiceImpl implements IAuthService {
   constructor(private readonly authApi: IAuthApi) {}
 
-  async login(email: string, password: string): Promise<ILoginResponse> {
-    const output = await this.authApi.login(email, password);
+  async login(params: ILoginParams): Promise<ILoginResponse> {
+    const output = await this.authApi.login(params);
 
     return output;
   }

@@ -1,3 +1,5 @@
+import { ILoginParams } from "@/types/ILoginParams";
+
 export interface IAvatar {
   id: number;
   image_high_url: string;
@@ -14,22 +16,26 @@ export interface IStaffRole {
   label: string;
 }
 
+export interface IUser {
+  id: number;
+  name: string;
+  email: string;
+  is_active: boolean;
+  avatar: IAvatar | null;
+  type: string;
+  created: string;
+  modified: string;
+  role: string;
+}
+
+export interface ITokens {
+  refresh: string;
+  access: string;
+}
+
 export interface ILoginResponse {
-  user: {
-    id: number;
-    name: string;
-    email: string;
-    is_active: boolean;
-    avatar: IAvatar | null;
-    type: string;
-    created: string;
-    modified: string;
-    role: string;
-  };
-  tokens: {
-    refresh: string;
-    access: string;
-  };
+  user: IUser;
+  tokens: ITokens;
 }
 
 export interface IProfileResponse {
@@ -44,12 +50,12 @@ export interface IProfileResponse {
 }
 
 export interface IAuthApi {
-  login(email: string, password: string): Promise<ILoginResponse>;
+  login(params: ILoginParams): Promise<ILoginResponse>;
   getProfile(): Promise<IProfileResponse>;
 }
 
 export class AuthApiMock implements IAuthApi {
-  async login(email: string, password: string): Promise<ILoginResponse> {
+  async login(params: ILoginParams): Promise<ILoginResponse> {
     const output: ILoginResponse = {
       user: {
         id: 4,
