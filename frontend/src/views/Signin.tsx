@@ -18,6 +18,9 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { useAppDispatch } from "@/hooks/useAppDispatch";
+import { authSelector, signin } from "@/slices/auth-slice";
+import { useAppSelector } from "@/hooks/useAppSelector";
 
 const formSchema = z.object({
   email: z.string().email({ message: "This is not a valid email." }),
@@ -33,11 +36,17 @@ const Signin: FunctionComponent<ISigninProps> = ({}) => {
     resolver: zodResolver(formSchema),
     defaultValues: {
       email: "",
+      password: "",
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
+  const dispatch = useAppDispatch();
+  const { user } = useAppSelector(authSelector);
+
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    const { email, password } = values;
+
+    await dispatch(signin({ email, password }));
   }
 
   return (
@@ -62,6 +71,7 @@ const Signin: FunctionComponent<ISigninProps> = ({}) => {
                     <Input
                       className="bg-input"
                       placeholder="E-mail..."
+                      autoComplete="email"
                       {...field}
                     />
                   </FormControl>
@@ -81,6 +91,7 @@ const Signin: FunctionComponent<ISigninProps> = ({}) => {
                       type="password"
                       className="bg-input"
                       placeholder="********"
+                      autoComplete="password"
                       {...field}
                     />
                   </FormControl>
