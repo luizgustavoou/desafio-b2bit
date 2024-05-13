@@ -22,6 +22,9 @@ export class User {
   @Column()
   name: string;
 
+  @Column()
+  lastName: string;
+
   @Column({
     nullable: true,
   })

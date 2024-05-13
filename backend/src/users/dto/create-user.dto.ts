@@ -60,6 +60,10 @@ export class CreateUserDto {
   @MinLength(3)
   name: string;
 
+  @IsString()
+  @MinLength(3)
+  lastName: string;
+
   @MinIfNotNull(30)
   about: string;
 

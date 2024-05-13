@@ -76,6 +76,14 @@ export class AuthService {
     };
   }
 
+  async getProfile(userId: string) {
+    const user = await this.usersService.findOneById(userId);
+
+    if (!user) throw new NotFoundException('Usuário não encontrado');
+
+    return user;
+  }
+
   private async getTokens(user: UserProfile) {
     const payload = {
       sub: user.id,

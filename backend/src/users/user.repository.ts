@@ -33,7 +33,7 @@ export class UsersRepositoryImpl implements UsersRepository {
 
   async findAll() {
     const output = await this.usersRepository.find({
-      select: ['id', 'email', 'name', 'avatarURL', 'about'],
+      select: ['id', 'email', 'name', 'lastName', 'avatarURL', 'about'],
     });
     return output;
   }
@@ -46,7 +46,7 @@ export class UsersRepositoryImpl implements UsersRepository {
   async findOneById(id: string) {
     const output = await this.usersRepository.findOne({
       where: { id },
-      select: ['id', 'email', 'name', 'avatarURL'],
+      select: ['id', 'email', 'name', 'lastName', 'avatarURL'],
     });
 
     return output;
