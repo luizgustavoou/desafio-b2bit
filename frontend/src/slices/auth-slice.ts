@@ -1,5 +1,3 @@
-
-
 import { ILoginResponse, IUser } from "@/apis/auth.api";
 
 import { HttpError } from "@/exceptions/http-error";
@@ -15,16 +13,12 @@ export interface AuthState {
   message: string | null;
 }
 
-// const accessToken = storageService.getItem("accessToken");
+const userJSON = storageService.getItem("user");
 
-// const userJwt: IUserJWT | null = accessToken
-//   ? jwtService.decode(accessToken)
-//   : null;
-
-// const user: IUser | null = userJwt ? serializeUserJwt(userJwt) : userJwt;
+const user: IUser | null = userJSON ? JSON.parse(userJSON) : null;
 
 const initialState: AuthState = {
-  user: null,
+  user,
   status: "idle",
   message: null,
 };
@@ -68,7 +62,7 @@ export const authSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
- 
+
       .addCase(signin.pending, (state, _) => {
         state.status = "loading";
       })

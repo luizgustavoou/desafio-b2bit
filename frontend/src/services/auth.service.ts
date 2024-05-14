@@ -18,6 +18,7 @@ export class AuthServiceImpl implements IAuthService {
 
     this.storageService.setItem("accessToken", output.tokens.access);
     this.storageService.setItem("refreshToken", output.tokens.refresh);
+    this.storageService.setItem("user", JSON.stringify(output.user));
 
     return output;
   }
