@@ -29,7 +29,7 @@ const HomeView: FunctionComponent<HomeViewProps> = () => {
 
   return (
     <div className="flex-1 flex justify-center items-center bg-[#F1F5F9] ">
-      <section className="bg-white p-6 rounded-xl w-[400px] flex flex-col   items-center gap-5">
+      <section className="bg-white p-7 rounded-xl w-[400px] flex flex-col   items-center gap-5">
         <figure className="flex flex-col items-center ">
           <figcaption>Profile picture</figcaption>
           <Avatar className="w-20 h-auto rounded-md">
@@ -38,7 +38,7 @@ const HomeView: FunctionComponent<HomeViewProps> = () => {
           </Avatar>
         </figure>
 
-        <div className="flex flex-col ">
+        <div className="flex flex-col w-full ">
           <Label className="text-lg" htmlFor="name">
             Your <span className="font-bold">Name</span>
           </Label>
@@ -49,7 +49,7 @@ const HomeView: FunctionComponent<HomeViewProps> = () => {
             readOnly
           />
         </div>
-        <div className="flex flex-col ">
+        <div className="flex flex-col w-full ">
           <Label className="text-lg" htmlFor="email">
             Your <span className="font-bold">E-mail</span>
           </Label>
