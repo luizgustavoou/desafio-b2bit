@@ -4,6 +4,6 @@ import { authApi } from "@/apis";
 
 const storageService: IStorageService = new LocalStorageServiceImpl();
 
-const authService: IAuthService = new AuthServiceImpl(authApi);
+const authService: IAuthService = new AuthServiceImpl(authApi, storageService);
 
 export { storageService, authService };

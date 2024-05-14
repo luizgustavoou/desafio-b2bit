@@ -18,9 +18,12 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+
+// Redux
+import { signin } from "@/slices/auth-slice";
+
+// Hooks
 import { useAppDispatch } from "@/hooks/useAppDispatch";
-import { authSelector, signin } from "@/slices/auth-slice";
-import { useAppSelector } from "@/hooks/useAppSelector";
 
 const formSchema = z.object({
   email: z.string().email({ message: "This is not a valid email." }),
@@ -41,7 +44,6 @@ const Signin: FunctionComponent<ISigninProps> = ({}) => {
   });
 
   const dispatch = useAppDispatch();
-  const { user } = useAppSelector(authSelector);
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     const { email, password } = values;

@@ -1,4 +1,4 @@
-// ler: https://blog.logrocket.com/using-typescript-redux-toolkit/
+
 
 import { ILoginResponse, IUser } from "@/apis/auth.api";
 
@@ -68,6 +68,7 @@ export const authSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
+ 
       .addCase(signin.pending, (state, _) => {
         state.status = "loading";
       })
