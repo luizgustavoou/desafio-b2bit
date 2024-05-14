@@ -7,6 +7,7 @@ import {
 import Signin from "./views/Signin";
 import HomeView from "./views/Home";
 import { useAuth } from "./hooks/useAuth";
+import NavMenu from "./components/NavMenu";
 
 function App() {
   const { auth } = useAuth();
@@ -14,6 +15,8 @@ function App() {
   return (
     <Router>
       <div className="min-h-screen flex flex-col">
+        {auth && <NavMenu />}
+
         <Routes>
           <Route path={"/"} element={<Navigate to={"/signin"} />} />
           <Route

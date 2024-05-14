@@ -8,7 +8,6 @@ export const useAuth = () => {
   const [auth, setAuth] = useState<boolean>(false);
 
   useEffect(() => {
-    console.log({ user });
     setAuth(!!user);
   }, [user]);
 
