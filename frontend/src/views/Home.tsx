@@ -42,13 +42,23 @@ const HomeView: FunctionComponent<HomeViewProps> = () => {
           <Label className="text-lg" htmlFor="name">
             Your <span className="font-bold">Name</span>
           </Label>
-          <Input id="name" value={user?.name ?? ""} readOnly />
+          <Input
+            className="bg-input"
+            id="name"
+            value={user?.name ?? ""}
+            readOnly
+          />
         </div>
         <div className="flex flex-col ">
           <Label className="text-lg" htmlFor="email">
             Your <span className="font-bold">E-mail</span>
           </Label>
-          <Input id="email" value={user?.email ?? ""} readOnly />
+          <Input
+            className="bg-input"
+            id="email"
+            value={user?.email ?? ""}
+            readOnly
+          />
         </div>
       </section>
     </div>
