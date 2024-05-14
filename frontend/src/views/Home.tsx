@@ -28,7 +28,7 @@ const HomeView: FunctionComponent<HomeViewProps> = () => {
   }, [authUser]);
 
   return (
-    <div className="flex-1 flex justify-center items-center bg-[#F1F5F9] ">
+    <div className="p-5 flex-1 flex justify-center items-center bg-[#F1F5F9] ">
       <section className="bg-white p-7 rounded-xl w-[400px] flex flex-col   items-center gap-5">
         <figure className="flex flex-col items-center ">
           <figcaption>Profile picture</figcaption>

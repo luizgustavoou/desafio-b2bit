@@ -52,7 +52,7 @@ const Signin: FunctionComponent<ISigninProps> = ({}) => {
   }
 
   return (
-    <div className="flex-1 flex justify-center items-center">
+    <div className="p-5 flex-1 flex justify-center items-center">
       <div className="px-5 py-9 flex flex-col space-y-8  max-w-full w-[438px] h-[534px] border shadow-inner">
         <header>
           <img
