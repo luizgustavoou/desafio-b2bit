@@ -55,7 +55,7 @@ export interface IAuthApi {
 }
 
 export class AuthApiMock implements IAuthApi {
-  async login(params: ILoginParams): Promise<ILoginResponse> {
+  async login(_: ILoginParams): Promise<ILoginResponse> {
     const output: ILoginResponse = {
       user: {
         id: 4,

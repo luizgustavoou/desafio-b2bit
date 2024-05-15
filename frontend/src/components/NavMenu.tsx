@@ -1,6 +1,5 @@
 // Shadcn-ui components
 import { Button } from "@/components/ui/button";
-import React from "react";
 
 import { logout } from "@/slices/auth-slice";
 import { useAppDispatch } from "@/hooks/useAppDispatch";
@@ -8,7 +7,7 @@ import { useAppDispatch } from "@/hooks/useAppDispatch";
 function NavMenu() {
   const dispatch = useAppDispatch();
 
-  const handleLogout = (e: React.MouseEvent) => {
+  const handleLogout = (_: React.MouseEvent) => {
     dispatch(logout());
   };
 

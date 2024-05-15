@@ -11,7 +11,6 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -58,7 +57,7 @@ const Signin: FunctionComponent<ISigninProps> = ({}) => {
           <img
             src={LightLogo}
             alt="Logo b2bit"
-            className="mx-auto max-w-[295px] w-full "
+            className="mx-auto max-w-full w-[295px] "
           />
         </header>
         <Form {...form}>
