@@ -39,7 +39,7 @@ Pré-requisitos: npm / yarn e Docker instalado
 
 ```bash
 # clonar repositório
-git clone https://github.com//talis-fb/desafio-b2bit.git
+git clone https://github.com//luizgustavoou/desafio-b2bit.git
 
 # entrar na pasta do projeto front end web
 cd desafio-b2bit
