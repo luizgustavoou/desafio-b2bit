@@ -3,7 +3,7 @@
 <!-- license --> 
 
 ## :memo:  Sobre o projeto
-Este desafio foi projetado para avaliar a capacidade técnica de candidatos à vagas de Desenvolvedor Front-end em ReactJS
+Este desafio foi projetado pela empresa b2bit para avaliar a capacidade técnica de candidatos à vagas de Desenvolvedor Front-end em ReactJS
 
 ## Layout web
 ![image](https://github.com/luizgustavoou/desafio-b2bit/assets/89609312/7c7d8e39-fb07-493a-8deb-da4d49f745ca)
