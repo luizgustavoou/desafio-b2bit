@@ -50,8 +50,7 @@ export const authSlice = createSlice({
   initialState,
   reducers: {
     logout(state) {
-      storageService.removeItem("accessToken");
-      storageService.removeItem("refreshToken");
+      storageService.removeItem("user");
 
       state.user = null;
     },
