@@ -33,7 +33,7 @@ const HomeView: FunctionComponent<HomeViewProps> = () => {
         <figure className="flex flex-col items-center ">
           <figcaption>Profile picture</figcaption>
           <Avatar className="w-20 h-auto rounded-md">
-            <AvatarImage src={user?.avatar.image_high_url} alt="@shadcn" />
+            <AvatarImage src={user?.avatar.high} alt="@shadcn" />
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
         </figure>

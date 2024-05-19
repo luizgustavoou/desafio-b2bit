@@ -1,5 +1,5 @@
-import { AuthApiMock, IAuthApi } from "./auth.api";
+import { AuthApiImpl, IAuthApi } from "./auth.api";
 
-const authApi: IAuthApi = new AuthApiMock();
+const authApi: IAuthApi = new AuthApiImpl();
 
 export { authApi };

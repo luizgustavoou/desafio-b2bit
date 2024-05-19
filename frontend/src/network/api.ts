@@ -6,6 +6,9 @@ import { baseURL } from "@/network/config";
 
 export const api = axios.create({
   baseURL,
+  headers: {
+    Accept: "application/json;version=v1_web",
+  },
 });
 
 api.interceptors.request.use(

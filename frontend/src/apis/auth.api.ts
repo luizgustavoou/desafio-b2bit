@@ -1,10 +1,11 @@
+import { api } from "@/network/api";
 import { ILoginParams } from "@/types/ILoginParams";
 
 export interface IAvatar {
   id: number;
-  image_high_url: string;
-  image_medium_url: string;
-  image_low_url: string;
+  high: string;
+  medium: string;
+  low: string;
 }
 
 export interface IRole {
@@ -54,6 +55,20 @@ export interface IAuthApi {
   getProfile(): Promise<IProfileResponse>;
 }
 
+export class AuthApiImpl implements IAuthApi {
+  async login(params: ILoginParams): Promise<ILoginResponse> {
+    const res = await api.post<ILoginResponse>("/auth/login/", params);
+
+    return res.data;
+  }
+
+  async getProfile(): Promise<IProfileResponse> {
+    const res = await api.get<IProfileResponse>("/auth/profile/");
+
+    return res.data;
+  }
+}
+
 export class AuthApiMock implements IAuthApi {
   async login(_: ILoginParams): Promise<ILoginResponse> {
     const output: ILoginResponse = {
@@ -84,12 +99,10 @@ export class AuthApiMock implements IAuthApi {
       id: "445e138e-99c6-4055-91d1-ebc2fb6165ee",
       avatar: {
         id: 8,
-        image_high_url:
-          "https://cognuro-app-assets.s3.amazonaws.com/media/images/IMG_4452_0spsnuL.jpg",
-        image_medium_url:
+        high: "https://cognuro-app-assets.s3.amazonaws.com/media/images/IMG_4452_0spsnuL.jpg",
+        medium:
           "https://cognuro-app-assets.s3.amazonaws.com/media/images/IMG_4452_medium_VjJtnel.jpg",
-        image_low_url:
-          "https://cognuro-app-assets.s3.amazonaws.com/media/images/IMG_4452_low_5Vh2hYj.jpg",
+        low: "https://cognuro-app-assets.s3.amazonaws.com/media/images/IMG_4452_low_5Vh2hYj.jpg",
       },
       name: "Miguel",
       last_name: "Rocha",
