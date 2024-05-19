@@ -1,73 +1,66 @@
-# Desafio b2bit
+# b2bit Challenge
 
-<!-- license --> 
+## :memo: About the Project
+This challenge was designed by b2bit to assess the technical capability of candidates for Front-end Developer positions in ReactJS.
 
-## :memo:  Sobre o projeto
-Este desafio foi projetado pela empresa b2bit para avaliar a capacidade técnica de candidatos à vagas de Desenvolvedor Front-end em ReactJS
-
-## Layout web
+## Web Layout
 ![image](https://github.com/luizgustavoou/desafio-b2bit/assets/89609312/7c7d8e39-fb07-493a-8deb-da4d49f745ca)
 ![image](https://github.com/luizgustavoou/desafio-b2bit/assets/89609312/0a23106d-9ad5-41e4-a721-1e8bbf55cbe7)
 
+## :books: Features
+- Authentication
+- Login with remember me
+- User profile view
 
-<!-- ## Modelo conceitual -->
+# :wrench: Technologies Used
+## Backend
+* NestJS
+* TypeORM
+* MySQL
 
-## :books: Funcionalidades
-- Autenticação
-- Login com remember me
-- Visualização do perfi ldo usuário
+## Frontend
+* React
+* Redux
+* Tailwind CSS
+* shadcn-ui
+* axios
 
-# :wrench: Tecnologias utilizadas
-## Back end
-* NestJS;
-* TypeORM;
-* MySQL;
-  
-## Front end
-* React;
-* Redux;
-* Tailwind CSS;
-* shadcn-ui;
-  
-<!--## Implantação em produção -->
+## Infrastructure
+* Docker
 
-## Infraestrutura
-* Docker;
-
-## :rocket: Rodando o projeto
-Pré-requisitos: npm / yarn e Docker instalado
+## :rocket: Running the Project
+Prerequisites: npm / yarn and Docker installed
 
 ```bash
-# clonar repositório
-git clone https://github.com//luizgustavoou/desafio-b2bit.git
+# clone the repository
+git clone https://github.com/luizgustavoou/desafio-b2bit.git
 
-# entrar na pasta do projeto front end web
+# navigate to the frontend project folder
 cd desafio-b2bit
 
+# install backend dependencies
 cd backend/
 
-# instalar depedências do backend
-yarn
+npm i
 
+# install frontend dependencies
 cd ../
 
 cd frontend/
 
-# instalar depedências do frontend
-yarn
+npm i
+
+# run the application
 cd ../
 
-# rodar aplicação
 docker compose up -d
 ```
 
-## :soon: Implementação futura
+## :soon: Future Implementation
 
-## :dart: Status do projeto
-<p>Backend: Em andamento</p>
-<p>Frontend: Finalizado</p>
+## :dart: Project Status
+<p>Backend: In Progress</p>
+<p>Frontend: Completed</p>
 
-# Autores
+# Authors
 <a href="https://github.com/luizgustavoou">Luiz Gustavo de Oliveira Umbelino</a><br>
-
-
