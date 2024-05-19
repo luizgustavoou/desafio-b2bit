@@ -25,11 +25,6 @@ This challenge was designed by b2bit to assess the technical capability of candi
 - shadcn-ui
 - axios
 
-## Infrastructure
-
-- Docker
--
-
 ## :rocket: Running the Project
 
 Prerequisites: npm / yarn and Docker installed
