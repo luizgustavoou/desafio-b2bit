@@ -17,12 +17,6 @@ This challenge was designed by b2bit to assess the technical capability of candi
 
 # :wrench: Technologies Used
 
-## Backend
-
-- NestJS
-- TypeORM
-- MySQL
-
 ## Frontend
 
 - React
